@@ -5,13 +5,13 @@ A simple static site to share a personalized Christmas greeting. Open `index.htm
 ## Project structure
 - `index.html` – page markup for the greeting.
 - `styles.css` – layout, gradients, snow animation, and responsive styling.
-- `script.js` – personalization hooks (names, memories, promises, snow config).
+- `script.js` – personalization hooks (names, memories, photo lookup, snow config).
 - `assets/` – place your images here. The page currently references `assets/placeholder-heart.svg` until you add your own photo.
 
 ## How to add your photos
 1. Drop your **primary photo** and **four funny pictures** into `assets/` (or `assets/photos/` if you want to keep them grouped). Common names like `Primary Picture.jpg`, `Primary Picture.png`, or `Funny 1.jpeg` are auto-tried in both folders.
-2. If you used different names, open `script.js` and update the `filenames` lists under `config.photos.primary` and `config.photos.funnies`. Every name you list is tried across `.jpg`, `.jpeg`, `.png`, `.webp` and both folders, with a graceful fallback to the heart placeholder.
-3. Tweak the captions, memories, promises, and wish text to sound like you.
+2. If you used different names, open `script.js` and update the `filenames` lists under `config.photos.primary` and `config.photos.funnies`. Every name you list is tried across `.jpg`, `.jpeg`, `.png`, `.webp`, `.heic` (plus uppercase extensions) and both folders, with a graceful fallback to the heart placeholder.
+3. Tweak the captions, memories, and wish text to sound like you.
 4. Refresh `index.html` in your browser to see your pictures and words together.
 
 ## If your GitHub repo looks empty

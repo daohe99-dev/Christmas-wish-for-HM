@@ -1,6 +1,9 @@
 const placeholderPhoto = "assets/photos/placeholder-heart.svg";
 
-const extensionCandidates = ["jpg", "jpeg", "png", "webp"];
+const baseExtensions = ["jpg", "jpeg", "png", "webp", "heic"];
+const extensionCandidates = [
+  ...new Set([...baseExtensions, ...baseExtensions.map((ext) => ext.toUpperCase())])
+];
 const folderCandidates = ["assets/photos", "assets"];
 
 function makeSrcCandidates(baseNames) {
@@ -43,14 +46,6 @@ const config = {
     ]
   },
   memories: ["First hot cocoa together", "Winter walks", "Our favorite song"],
-  promises: [
-    "Hot chocolate dates",
-    "Cozy movie nights",
-    "Endless back hugs",
-    "Listening without hurry",
-    "Planning our next adventure",
-    "Saving a dance just for you"
-  ],
   wish: {
     intro: "Every twinkle in the lights reminds me of the way you make me feel seen and loved.",
     body:
@@ -119,20 +114,6 @@ function applyConfig(cfg) {
     card.appendChild(img);
     card.appendChild(label);
     funnyGrid.appendChild(card);
-  });
-
-  const promises = document.getElementById("promiseList");
-  promises.innerHTML = "";
-  cfg.promises.forEach((promise) => {
-    const btn = document.createElement("button");
-    btn.className = "promise";
-    btn.dataset.revealed = "false";
-    btn.innerHTML = `<span class="icon">★</span><span class="text">${promise}</span>`;
-    btn.addEventListener("click", () => {
-      const state = btn.dataset.revealed === "true";
-      btn.dataset.revealed = (!state).toString();
-    });
-    promises.appendChild(btn);
   });
 }
 
