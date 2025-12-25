@@ -1,7 +1,7 @@
 const placeholderPhoto = "assets/photos/placeholder-heart.svg";
 
 const config = {
-  recipient: "Hannah",
+  recipient: "Huimin",
   photos: {
     primary: {
       // Try common filenames and both the root assets folder and assets/photos/
@@ -47,10 +47,10 @@ const config = {
       },
       {
         src: [
-          "assets/funny-4.jpg",
-          "assets/Funny 4.jpg",
-          "assets/photos/Funny 4.jpg",
-          "assets/photos/funny-4.jpg"
+          "assets/funny-5.jpg",
+          "assets/Funny 5.jpg",
+          "assets/photos/Funny 5.jpg",
+          "assets/photos/funny-5.jpg"
         ],
         alt: "Candid moment",
         note: "You being effortlessly cute."
