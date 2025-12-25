@@ -1,5 +1,5 @@
 const config = {
-  recipient: "Hannah",
+  recipient: "Huimin",
   photo: "assets/placeholder-heart.svg",
   caption: "One of my favorite memories with you.",
   memories: [
