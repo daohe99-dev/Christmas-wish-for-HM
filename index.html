@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christmas Wish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+  <div class="snow-canvas" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Merry Christmas</p>
+      <h1>To my light, <span id="recipient">Hannah</span></h1>
+      <p class="lede">No matter how cold the world gets, you keep my heart warm and bright.</p>
+      <div class="tag-group" id="memoryTags">
+        <span class="tag">First hot cocoa together</span>
+        <span class="tag">Winter walks</span>
+        <span class="tag">Our favorite song</span>
+      </div>
+    </div>
+    <figure class="hero__photo">
+      <img id="photo" src="assets/placeholder-heart.svg" alt="Photo of us together" />
+      <figcaption id="photoCaption">One of my favorite memories with you.</figcaption>
+    </figure>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>My Christmas wish for you</h2>
+      <p id="wishIntro">Every twinkle in the lights reminds me of the way you make me feel seen and loved.</p>
+      <p id="wishBody">
+        I hope this season wraps you in the same warmth you gift me daily. You deserve quiet mornings, laughter that
+        echoes, and a hand that never lets go. Thank you for being my gentle place to land.
+      </p>
+      <p id="wishClosing">Here's to more cozy winters and endless memories—always side by side.</p>
+    </section>
+
+    <section class="card card--accent">
+      <div class="card__header">
+        <h2>Little promises</h2>
+        <p>Tap the stars to reveal them.</p>
+      </div>
+      <div class="promise-grid" id="promiseList">
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Hot chocolate dates</span>
+        </button>
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Cozy movie nights</span>
+        </button>
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Endless back hugs</span>
+        </button>
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Listening without hurry</span>
+        </button>
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Planning our next adventure</span>
+        </button>
+        <button class="promise" data-revealed="false">
+          <span class="icon">★</span>
+          <span class="text">Saving a dance just for you</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How to make it yours</h2>
+      <ol class="instructions">
+        <li>Replace <code>assets/placeholder-heart.svg</code> with your favorite photo and update the <code>photo</code> URL in <code>script.js</code>.</li>
+        <li>Open <code>script.js</code> and set the <code>recipient</code> name, memories, promises, and the wish text.</li>
+        <li>Share the page link or open it together for a surprise moment.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love, always.</p>
+    <div class="switcher">
+      <label for="themeToggle">Twinkling night mode</label>
+      <input type="checkbox" id="themeToggle" aria-label="Toggle night mode" />
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
