@@ -1,7 +1,7 @@
 const placeholderPhoto = "assets/photos/placeholder-heart.svg";
 
 const config = {
-  recipient: "Hannah",
+  recipient: "Huimin",
   photos: {
     primary: {
       src: "assets/primary-picture.jpg",
