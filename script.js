@@ -15,37 +15,80 @@ function makeSrcCandidates(baseNames) {
 }
 
 const config = {
-  recipient: "Hannah",
+  recipient: "Huimin",
   photos: {
     primary: {
       filenames: ["Primary Picture", "primary-picture", "primary"],
+const config = {
+  recipient: "Huimin",
+  photos: {
+    primary: {
+      // Try common filenames and both the root assets folder and assets/photos/
+      src: [
+        "assets/primary-picture.jpg",
+        "assets/Primary Picture.jpg",
+        "assets/photos/Primary Picture.jpg",
+        "assets/photos/primary-picture.jpg"
+      ],
       alt: "Our favorite holiday photo together",
       caption: "One of my favorite memories with you."
     },
     funnies: [
       {
         filenames: ["Funny 1", "funny-1", "funny-one"],
+        src: [
+          "assets/funny-1.jpg",
+          "assets/Funny 1.jpg",
+          "assets/photos/Funny 1.jpg",
+          "assets/photos/funny-1.jpg"
+        ],
         alt: "Laughing together",
         note: "When we couldn't stop giggling."
       },
       {
         filenames: ["Funny 2", "funny-2", "funny-two"],
+        src: [
+          "assets/funny-2.jpg",
+          "assets/Funny 2.jpg",
+          "assets/photos/Funny 2.jpg",
+          "assets/photos/funny-2.jpg"
+        ],
         alt: "Goofy pose",
         note: "Our silliest selfie."
       },
       {
         filenames: ["Funny 3", "funny-3", "funny-three"],
+        src: [
+          "assets/funny-3.jpg",
+          "assets/Funny 3.jpg",
+          "assets/photos/Funny 3.jpg",
+          "assets/photos/funny-3.jpg"
+        ],
         alt: "Holiday blooper",
         note: "The outtake I love most."
       },
       {
-        filenames: ["Funny 4", "funny-4", "funny-four"],
+        filenames: ["Funny 5", "funny-5", "funny-five"],
+        src: [
+          "assets/funny-5.jpg",
+          "assets/Funny 5.jpg",
+          "assets/photos/Funny 5.jpg",
+          "assets/photos/funny-5.jpg"
+        ],
         alt: "Candid moment",
         note: "You being effortlessly cute."
       }
     ]
   },
   memories: ["First hot cocoa together", "Winter walks", "Our favorite song"],
+  promises: [
+    "Hot chocolate dates",
+    "Cozy movie nights",
+    "Endless back hugs",
+    "Listening without hurry",
+    "Planning our next adventure",
+    "Saving a dance just for you"
+  ],
   wish: {
     intro: "Every twinkle in the lights reminds me of the way you make me feel seen and loved.",
     body:
@@ -82,6 +125,7 @@ function applyConfig(cfg) {
   const primaryPhoto = document.getElementById("photo");
   const primarySources = makeSrcCandidates(cfg.photos.primary.filenames);
   applyImage(primaryPhoto, primarySources, cfg.photos.primary.alt);
+  applyImage(primaryPhoto, cfg.photos.primary.src, cfg.photos.primary.alt);
   document.getElementById("photoCaption").textContent = cfg.photos.primary.caption;
   document.getElementById("wishIntro").textContent = cfg.wish.intro;
   document.getElementById("wishBody").textContent = cfg.wish.body;
@@ -106,6 +150,7 @@ function applyConfig(cfg) {
     img.loading = "lazy";
     const sources = makeSrcCandidates(photo.filenames);
     applyImage(img, sources, photo.alt);
+    applyImage(img, photo.src, photo.alt);
 
     const label = document.createElement("p");
     label.className = "memory-label";
@@ -114,6 +159,20 @@ function applyConfig(cfg) {
     card.appendChild(img);
     card.appendChild(label);
     funnyGrid.appendChild(card);
+  });
+
+  const promises = document.getElementById("promiseList");
+  promises.innerHTML = "";
+  cfg.promises.forEach((promise) => {
+    const btn = document.createElement("button");
+    btn.className = "promise";
+    btn.dataset.revealed = "false";
+    btn.innerHTML = `<span class="icon">★</span><span class="text">${promise}</span>`;
+    btn.addEventListener("click", () => {
+      const state = btn.dataset.revealed === "true";
+      btn.dataset.revealed = (!state).toString();
+    });
+    promises.appendChild(btn);
   });
 }
 

@@ -141,12 +141,57 @@ body {
   letter-spacing: -0.01em;
 }
 
+.card--accent {
+  border: 1px solid var(--accent-soft);
+}
+
 .card__header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.promise {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: left;
+  background: linear-gradient(135deg, rgba(197, 48, 48, 0.08), rgba(255, 255, 255, 0));
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.promise:hover,
+.promise:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(31, 34, 44, 0.12);
+  outline: none;
+}
+
+.promise[data-revealed="true"] {
+  background: linear-gradient(135deg, rgba(197, 48, 48, 0.16), rgba(255, 255, 255, 0));
+}
+
+.promise .icon {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.promise .text {
+  font-weight: 700;
 }
 
 .memory-grid {
@@ -176,6 +221,11 @@ body {
   margin: 10px 12px 12px;
   font-weight: 700;
   color: var(--text);
+}
+
+.instructions {
+  padding-left: 18px;
+  color: var(--muted);
 }
 
 .footer {
