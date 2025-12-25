@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Heart placeholder">
+  <defs>
+    <linearGradient id="grad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f99c9c" />
+      <stop offset="100%" stop-color="#c53030" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" rx="20" fill="#fff5f5" />
+  <path
+    d="M160 164c-30-22-70-49-70-87 0-21 16-38 37-38 14 0 26 7 33 18 7-11 19-18 33-18 21 0 37 17 37 38 0 38-40 65-70 87z"
+    fill="url(#grad)"
+  />
+  <text x="50%" y="50%" text-anchor="middle" fill="#fff" font-family="Manrope, sans-serif" font-size="20" dy="6">
+    Add your photo here
+  </text>
+</svg>
